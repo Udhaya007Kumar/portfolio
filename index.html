@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>protofol</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet " href="./style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"}
+      }
+    },
+    fontFamily: {
+      'body': [
+    'Inter', 
+    'ui-sans-serif', 
+     'Syne',
+   'system-ui', 
+    '-apple-system', 
+    'system-ui', 
+    'Segoe UI', 
+    'Roboto', 
+    'Helvetica Neue', 
+    'Arial', 
+    'Noto Sans', 
+    'sans-serif', 
+    'Apple Color Emoji', 
+    'Segoe UI Emoji', 
+    'Segoe UI Symbol', 
+    'Noto Color Emoji'
+    
+    
+  ],
+      'sans': [
+    'Inter', 
+    'Syne',
+    'ui-sans-serif', 
+    'system-ui', 
+    '-apple-system', 
+    'system-ui', 
+    'Segoe UI', 
+    'Roboto', 
+    'Helvetica Neue', 
+    'Arial', 
+    'Noto Sans', 
+    'sans-serif', 
+    'Apple Color Emoji', 
+    'Segoe UI Emoji', 
+    'Segoe UI Symbol', 
+    'Noto Color Emoji'
+  ]
+    }
+  }
+}
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+  </style>
+  <style>
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body class="font-syan">
+    <header class='flex shadow-md py-4 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50'>
+        <div class='flex flex-wrap items-center justify-between gap-5 w-full'>
+          <a href="javascript:void(0)"><img src="" alt="" class='w-36' />div
+          </a>
+      
+          <div id="collapseMenu"
+            class='max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50'>
+            <button id="toggleClose" class='lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3'>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 fill-black" viewBox="0 0 320.591 320.591">
+                <path
+                  d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+                  data-original="#000000"></path>
+                <path
+                  d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+                  data-original="#000000"></path>
+              </svg>
+            </button>
+      
+            <ul
+              class='lg:flex gap-x-5 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
+              <li class='mb-6 hidden max-lg:block'>
+                <a href="javascript:void(0)"><img src="https://readymadeui.com/readymadeui.svg" alt="logo" class='w-36' />
+                </a>
+              </li>
+              <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'>
+                <a href='javascript:void(0)'
+                  class='hover:text-[#007bff] text-[#007bff] block font-semibold text-[15px]'>Home</a>
+              </li>
+              <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href='javascript:void(0)'
+                  class='hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>About</a>
+              </li>
+              <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href='javascript:void(0)'
+                  class='hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Project</a>
+              </li>
+              <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href='javascript:void(0)'
+                  class='hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Blog</a>
+              </li>
+              <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href='javascript:void(0)'
+                  class='hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Contact</a>
+              </li>
+            </ul>
+          </div>
+      
+          <div class='flex max-lg:ml-auto space-x-3'>
+            <button
+              class='px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]'>Login</button>
+            <button
+              class='px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]'>Sign
+              up</button>
+      
+            <button id="toggleOpen" class='lg:hidden'>
+              <svg class="w-7 h-7" fill="#000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+   
+      
+
+     <section>
+           <div class="relative ">
+             <!-- Image element -->
+                    <ul id="slider">
+                      <!-- //h-[50vh] -->
+                      <li class=" h-[80vh] relative">
+                        <img class="h-full object-cover w-full" src="./assets/1716288475524.jfif" alt=""> 
+                        <!-- <div class="absolute top-0 left-0 w-full h-full flex">
+                          <h2 class="text-4xl font-bold text-white my-auto px-20 text-center ">Some Heading</h2>
+                        </div> -->
+                      </li> 
+                  
+                      
+                      
+                    </ul>
+                <!-- button element -->
+                <!-- <div class="absolute px-5 flex top-0 left-0 h-full w-full">
+                  <div class="my-auto  w-full flex justify-between">
+                    <button onclick="prev()"  class="bg-white p-3 rounded-full bg-opacity-80 shadow-lg ">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                      </svg>                    
+                    </button>
+                    <button onclick="next()" class="bg-white p-3 rounded-full bg-opacity-80 shadow-lg ">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                      </svg>                    
+                    </button>  
+                  </div>
+                </div> -->
+            </div>
+      </section>
+
+      <!-- About Page -->
+       <!-- Main container -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Header -->
+      <div class="text-center ">
+        <h2 class="text-4xl text-indigo-600 font-semibold tracking-wide uppercase ">About Us</h2>
+        <p class="mt-2 text-xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          Who We Are
+        </p>
+        <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+          We are a team of passionate professionals dedicated to making a difference through innovative solutions.
+        </p>
+      </div>
+
+      <!-- About Section -->
+      <div class="mt-16 flex flex-col md:flex-row items-center justify-center space-y-10 md:space-y-0 md:space-x-10">
+
+        <!-- Profile Image -->
+        <div class="flex-shrink-0">
+          <img class="rounded-full w-48 h-48 object-cover" src="./assets/brunette-woman-hugging-laptop 1.png" alt="Profile Picture">
+        </div>
+
+        <!-- Content -->
+        <div class="max-w-xl text-center md:text-left">
+          <h3 class="text-2xl font-bold text-gray-900">Our Mission</h3>
+          <p class="mt-4 text-gray-600">
+            At our company, we believe in the power of collaboration, creativity, and commitment. We strive to deliver high-quality services and solutions that cater to our clients' needs. Our mission is to foster innovation and contribute positively to society through our work.
+          </p>
+          <p class="mt-4 text-gray-600">
+            With a diverse and skilled team, we bring together expertise from various industries to provide well-rounded, effective solutions. Our journey began several years ago, and we are proud of the impact we've made since then.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-indigo-600 text-white py-20">
+    <div class="container mx-auto text-center">
+        <h1 class="text-5xl font-bold mb-4">My Projects</h1>
+        <p class="text-xl max-w-2xl mx-auto">
+            A collection of projects that I've built, showcasing my skills in web development, design, and programming.
+        </p>
+    </div>
+</section>
+
+<!-- Projects Grid Section -->
+<section class="py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project Card 1 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSJPufHvlSFqpHeYOTZVsaNVQ1Ds3xH_Q4Jw&s" alt="Project 1">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Project Management App</h3>
+                    <p class="text-gray-600 mb-4">
+                        A full-stack project management tool that helps teams stay on track with tasks, deadlines, and collaboration.
+                    </p>
+                    <div class="flex justify-between">
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">Live Demo</a>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSJPufHvlSFqpHeYOTZVsaNVQ1Ds3xH_Q4Jw&s" alt="Project 2">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
+                    <p class="text-gray-600 mb-4">
+                        A scalable e-commerce platform with product listings, shopping cart functionality, and integrated payment gateway.
+                    </p>
+                    <div class="flex justify-between">
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">Live Demo</a>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSJPufHvlSFqpHeYOTZVsaNVQ1Ds3xH_Q4Jw&s" alt="Project 3">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
+                    <p class="text-gray-600 mb-4">
+                        A personal portfolio website designed to showcase my web development projects and skills.
+                    </p>
+                    <div class="flex justify-between">
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">Live Demo</a>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSJPufHvlSFqpHeYOTZVsaNVQ1Ds3xH_Q4Jw&s" alt="Project 4">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Weather App</h3>
+                    <p class="text-gray-600 mb-4">
+                        A weather forecasting app that pulls real-time data from a weather API, displaying current and future conditions.
+                    </p>
+                    <div class="flex justify-between">
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">Live Demo</a>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 5 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSJPufHvlSFqpHeYOTZVsaNVQ1Ds3xH_Q4Jw&s" alt="Project 5">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Social Media Dashboard</h3>
+                    <p class="text-gray-600 mb-4">
+                        A dashboard for tracking social media metrics across various platforms, featuring data visualizations and charts.
+                    </p>
+                    <div class="flex justify-between">
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">Live Demo</a>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 6 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSJPufHvlSFqpHeYOTZVsaNVQ1Ds3xH_Q4Jw&s" alt="Project 6">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Chat Application</h3>
+                    <p class="text-gray-600 mb-4">
+                        A real-time chat application built with WebSocket technology, allowing users to communicate instantly in different chat rooms.
+                    </p>
+                    <div class="flex justify-between">
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">Live Demo</a>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+  <!-- blogpage -->
+  <section class="bg-gray-800 text-white py-20">
+    <div class="container mx-auto text-center">
+        <h1 class="text-5xl font-bold mb-6">Welcome to My Blog</h1>
+        <p class="text-xl max-w-2xl mx-auto">
+            Sharing insights, tutorials, and stories about web development, design, and tech.
+        </p>
+    </div>
+</section>
+<section class="py-16">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-12">Latest Posts</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Blog Post Card 1 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpJDpfbXFtVMLVfj1yp-_KZwzjACd54ev8qA&s" alt="Blog Post 1">
+              <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">The Art of Responsive Design</h3>
+                  <p class="text-gray-600 mb-4">
+                      Learn how to create websites that look great on any screen size with responsive design techniques.
+                  </p>
+                  <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">Read More →</a>
+              </div>
+          </div>
+
+          <!-- Blog Post Card 2 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img class="w-full h-48 object-cover" src="data:image/jpeg;base64,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" alt="Blog Post 2">
+              <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">Understanding CSS Grid</h3>
+                  <p class="text-gray-600 mb-4">
+                      Dive into CSS Grid, a powerful layout system that can help you create flexible and robust layouts.
+                  </p>
+                  <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">Read More →</a>
+              </div>
+          </div>
+
+          <!-- Blog Post Card 3 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDij26EvWfqkn08HRTDsL4FwL4z4upvCiGTw&s" alt="Blog Post 3">
+              <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">JavaScript Best Practices</h3>
+                  <p class="text-gray-600 mb-4">
+                      Explore some of the best practices for writing clean, efficient, and maintainable JavaScript code.
+                  </p>
+                  <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">Read More →</a>
+              </div>
+          </div>
+
+          <!-- Blog Post Card 4 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAXBYk6s0ohHCw0vcz09dkbea25n3N_ir1_A&s" alt="Blog Post 4">
+              <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">10 Tools Every Developer Should Know</h3>
+                  <p class="text-gray-600 mb-4">
+                      Discover the essential tools that can enhance your workflow and make development easier.
+                  </p>
+                  <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">Read More →</a>
+              </div>
+          </div>
+
+          <!-- Blog Post Card 5 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwfz9pIGq8Ulv4AkPHgluyRY79mCdhOpjOkQ&s" alt="Blog Post 5">
+              <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">A Guide to Tailwind CSS</h3>
+                  <p class="text-gray-600 mb-4">
+                      Tailwind CSS is a utility-first framework that helps you build modern websites without writing custom CSS.
+                  </p>
+                  <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">Read More →</a>
+              </div>
+          </div>
+          <!-- Blog Post Card 6 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwfz9pIGq8Ulv4AkPHgluyRY79mCdhOpjOkQ&s" alt="Blog Post 6">
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Introduction to React Hooks</h3>
+                <p class="text-gray-600 mb-4">
+                    Learn how to use React Hooks to manage state and lifecycle methods in functional components.
+                </p>
+                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">Read More →</a>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+  <!-- Contact Form Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
+            <h2 class="text-3xl font-bold text-center mb-8">Get in Touch</h2>
+
+            <form action="#" method="POST">
+                <!-- Name Field -->
+                <div class="mb-6">
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="Your Name" required>
+                </div>
+
+                <!-- Email Field -->
+                <div class="mb-6">
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="Your Email" required>
+                </div>
+
+                <!-- Subject Field -->
+                <div class="mb-6">
+                    <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                    <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="Subject" required>
+                </div>
+
+                <!-- Message Field -->
+                <div class="mb-6">
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                    <textarea id="message" name="message" rows="6" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="Your Message" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+footer page
+   <footer class="bg-gray-800 text-gray-200 py-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          
+          <!-- About Section -->
+          <div>
+              <h3 class="text-lg font-semibold mb-4">About Me</h3>
+              <p class="text-gray-400">
+                  I am a full-stack developer passionate about building impactful web applications and crafting beautiful user experiences.
+              </p>
+          </div>
+
+          <!-- Quick Links Section -->
+          <div>
+              <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul class="space-y-2">
+                  <li><a href="#" class="hover:text-white">Home</a></li>
+                  <li><a href="#" class="hover:text-white">About</a></li>
+                  <li><a href="#" class="hover:text-white">Projects</a></li>
+                  <li><a href="#" class="hover:text-white">Contact</a></li>
+                  <li><a href="#" class="hover:text-white">Blog</a></li>
+              </ul>
+          </div>
+
+          <!-- Contact Info Section -->
+          <div>
+              <h3 class="text-lg font-semibold mb-4">Contact</h3>
+              <ul class="space-y-2">
+                  <li><span class="text-gray-400">Email:</span> <a href="mailto:email@example.com" class="hover:text-white">email@example.com</a></li>
+                  <li><span class="text-gray-400">Phone:</span> <a href="tel:+123456789" class="hover:text-white">+123 456 789</a></li>
+                  <li><span class="text-gray-400">Location:</span> City, Country</li>
+              </ul>
+          </div>
+
+          <!-- Social Media Section -->
+          <div>
+              <h3 class="text-lg font-semibold mb-4">Follow Me</h3>
+              <div class="flex space-x-4">
+                  <a href="#" class="text-gray-400 hover:text-white">
+                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M22.46 6c-.77.35-1.6.59-2.46.7a4.21 4.21 0 0 0 1.85-2.32 8.41 8.41 0 0 1-2.68 1.03A4.21 4.21 0 0 0 16 4a4.21 4.21 0 0 0-4.2 4.2c0 .33.04.65.1.96A11.94 11.94 0 0 1 3 5.16a4.19 4.19 0 0 0-.57 2.11 4.2 4.2 0 0 0 1.86 3.49A4.18 4.18 0 0 1 2.8 10v.04a4.2 4.2 0 0 0 3.36 4.12 4.26 4.26 0 0 1-1.9.07 4.2 4.2 0 0 0 3.92 2.92A8.45 8.45 0 0 1 2 20.47a11.89 11.89 0 0 0 6.45 1.89c7.74 0 11.98-6.41 11.98-11.98 0-.18-.01-.35-.01-.52A8.6 8.6 0 0 0 24 4.57a8.4 8.4 0 0 1-2.54.7z"/>
+                      </svg>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-white">
+                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 5.5 4.46 9.96 9.96 9.96 5.5 0 9.96-4.46 9.96-9.96 0-5.5-4.46-9.96-9.96-9.96zm3.7 10.7c.01.14.01.28.01.42 0 4.3-3.27 9.26-9.26 9.26-1.85 0-3.57-.54-5.03-1.48a6.83 6.83 0 0 0 .79.05c1.54 0 2.95-.53 4.08-1.42a3.27 3.27 0 0 1-3.06-2.27c.47.07.9.07 1.35-.05a3.26 3.26 0 0 1-2.62-3.2v-.04c.43.24.92.38 1.45.39a3.26 3.26 0 0 1-1.46-2.72c0-.6.16-1.17.44-1.66 1.6 1.96 4 3.24 6.7 3.37-.05-.24-.07-.49-.07-.74a3.26 3.26 0 0 1 3.26-3.26c.94 0 1.78.39 2.38 1.02a6.48 6.48 0 0 0 2.06-.78 3.26 3.26 0 0 1-1.43 1.8 6.5 6.5 0 0 0 1.87-.51 6.83 6.83 0 0 1-1.64 1.7z"/>
+                      </svg>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-white">
+                      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 0C5.372 0 0 5.373 0 12c0 5.3 3.438 9.745 8.205 11.311-.113-.959-.214-2.437.044-3.484.242-.998 1.556-6.354 1.556-6.354s-.397-.794-.397-1.967c0-1.841 1.07-3.214 2.4-3.214 1.131 0 1.677.849 1.677 1.867 0 1.137-.725 2.837-1.099 4.417-.313 1.322.663 2.4 1.965 2.4 2.357 0 4.174-2.491 4.174-6.081 0-3.187-2.294-5.42-5.578-5.42-3.804 0-6.05 2.847-6.05 5.78 0 1.155.444 2.393 1.006 3.065.111.133.127.25.093.384-.102.42-.329 1.322-.371 1.503-.058.242-.19.293-.441.176-1.64-.761-2.665-3.15-2.665-5.075 0-4.143 3.012-7.94 8.707-7.94 4.57 0 8.127 3.256 8.127 7.62 0 4.538-2.858 8.184-6.825 8.184-1.331 0-2.582-.688-3.006-1.503 0 0-.714 2.714-.883 3.396-.27 1.057-.995 2.374-1.548 3.175C10.095 23.545 11.04 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
+                      </svg>
+                  </a>
+              </div>
+          </div>
+      </div>
+
+
+
+
+    
+
+        
+
+      <script src="./script.js"></script>
+</body>
+</html>
